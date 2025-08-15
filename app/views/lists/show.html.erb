@@ -7,6 +7,11 @@
 <div class="container mt-3">
   <div class="row">
     <div class="col-9">
+      <% if @list.photo.attached? %>
+        <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :thumb, gravity: :face %>
+      <% else %>
+        <%= image_tag 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU' %>
+      <% end %>
       <div class="cards">
         <% @list.bookmarks.each do |bookmark| %>
           <%= render 'bookmarks/card', bookmark: bookmark %>

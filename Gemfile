@@ -53,6 +53,7 @@ gem "simple_form"
 gem "sassc-rails"
 gem 'rest-client'
 gem 'faker'
+gem 'cloudinary'
 
 
 group :development, :test do
